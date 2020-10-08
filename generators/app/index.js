@@ -91,7 +91,12 @@ module.exports = class extends Generator {
 
     this.fs.copy(
       this.templatePath('_npmignore'),
-      this.destinationPath('.npmignore')
+      this.destinationPath('.npmignore'),
+      {
+        globOptions: {
+          dot: true
+        }
+      }
     );
   }
 
