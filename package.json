@@ -1,6 +1,6 @@
 {
   "name": "generator-tis-module",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "yeoman generator for TIS npm module",
   "homepage": "https://github.ibm.com/dnguyen/generator-tis-module.git",
   "author": {
