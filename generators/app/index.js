@@ -68,12 +68,14 @@ module.exports = class extends Generator {
       {
         globOptions: {
           ignore: [
-            'package.json'
+            'package.json',
+            '_npmignore'
           ],
           dot: true
         }
       }
     );
+
     this.fs.copyTpl(
       this.templatePath('package.json'),
       this.destinationPath('package.json'), {
@@ -85,6 +87,11 @@ module.exports = class extends Generator {
         keywords: this.props.keywords.split(',').map((kw) => `"${kw.trim()}"`),
         author: this.props.author
       }
+    );
+
+    this.fs.copy(
+      this.templatePath('_npmignore'),
+      this.destinationPath('.npmignore')
     );
   }
 
