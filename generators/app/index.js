@@ -69,7 +69,8 @@ module.exports = class extends Generator {
         globOptions: {
           ignore: [
             'package.json',
-            '_npmignore'
+            '_npmignore',
+            '_gitignore'
           ],
           dot: true
         }
@@ -91,13 +92,16 @@ module.exports = class extends Generator {
 
     this.fs.copy(
       this.templatePath('_npmignore'),
-      this.destinationPath('.npmignore'),
-      {
-        globOptions: {
-          dot: true
-        }
-      }
+      this.destinationPath('.npmignore')
     );
+
+    this.fs.copy(
+      this.templatePath('_gitignore'),
+      this.destinationPath('.gitignore')
+    );
+
+    this.fs.delete(this.destinationPath('_npmignore'));
+    this.fs.delete(this.destinationPath('_gitignore'));
   }
 
   install() {
