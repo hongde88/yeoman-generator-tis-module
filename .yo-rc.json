@@ -1,0 +1,9 @@
+{
+  "generator-node": {
+    "promptValues": {
+      "authorName": "Duc Nguyen",
+      "authorEmail": "dnguyen@us.ibm.com",
+      "authorUrl": "https://github.ibm.com/dnguyen"
+    }
+  }
+}

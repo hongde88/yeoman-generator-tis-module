@@ -1,0 +1,6 @@
+.*
+docs/
+coverage
+node_modules/
+database/
+licenses/
